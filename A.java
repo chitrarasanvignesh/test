@@ -1,0 +1,23 @@
+package STATIC;
+
+public class A {
+	private static A obj;
+	private A() {	
+	}
+	public static A getA() {
+		if(obj == null) {
+			synchronized(Singleton.class) {
+				if(obj == null) {
+					obj = new Singleton();
+				}
+			}
+			
+			return obj;
+			
+		}
+		public void doSomething() {
+			System.out.println("m");
+		}
+	}
+
+}
